@@ -11,6 +11,7 @@ public class OnlineBookStoreApplicationTests {
 
 	@Test
 	public void contextLoads() {
+		System.out.println("Test case1");
 	}
 
 }
