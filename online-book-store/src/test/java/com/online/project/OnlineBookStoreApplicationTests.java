@@ -1,4 +1,4 @@
-package com.online.project.onlinebookstore;
+package com.online.project;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

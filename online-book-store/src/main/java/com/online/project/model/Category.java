@@ -10,27 +10,35 @@ public class Category {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int id;
-	private String category;
+	private Integer catId;
+	private String name;
+	private Integer parent;
 
-	public Category() {
-
+	/*
+	 * private int id; private String category;
+	 */
+	public Integer getCatId() {
+		return catId;
 	}
 
-	public int getId() {
-		return id;
+	public void setCatId(Integer catId) {
+		this.catId = catId;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public String getName() {
+		return name;
 	}
 
-	public String getCategory() {
-		return category;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public void setCategory(String category) {
-		this.category = category;
+	public Integer getParent() {
+		return parent;
+	}
+
+	public void setParent(Integer parent) {
+		this.parent = parent;
 	}
 
 }

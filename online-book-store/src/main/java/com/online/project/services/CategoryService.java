@@ -1,11 +1,14 @@
 package com.online.project.services;
 
 import java.util.List;
+import java.util.Map;
 
 import com.online.project.model.Category;
 
 public interface CategoryService {
 
-	public List<Category> getCategories();
+	public Map<String,List<String>> getCategories();
+
+	List<Category> getCategoryByParent(Integer parent);
 
 }
