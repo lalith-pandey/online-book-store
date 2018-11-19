@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Welcome</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- jQuery library -->
+
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+	<!--Start Top Navbar  -->
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#myNavbar">
+					<!-- <span class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span> -->
+				</button>
+				<div id="mySidenav" class="sidenav">
+				
+				<ul th:each="category : ${categoryMap}">
+				<li th:text="${category.key}" style="color:white;">	
+				 <ul th:each="categoryVal : ${category.value}">
+				   <li th:text="${categoryVal}" style="color:white;">	
+				 </ul>
+				</li>
+				
+				</ul>
+				
+				<table border="1">
+					<tr th:each="category : ${categoryMap}">
+						<td th:text="${category.key}" style="color:white;"><td>
+					</tr>
+				</table>
+					<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+				</div>
+				<span class="fa fa-bars" style="font-size: 30px; cursor: pointer"
+					onclick="openNav()"></span> <a href="categories">Click ME</a>
+
+				<!-- <a class="navbar-brand" th:href="@{/categories}"><span
+					"></span></a> -->
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#"><span
+							class="glyphicon glyphicon-home"></span></a></li>
+				</ul>
+				<!-- Search form -->
+				<ul class="nav navbar-nav navbar-center">
+					<li><input type="text" name="search" placeholder="Search..">
+					</li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#"><span
+							class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+					<li><a href="#"><span class="glyphicon glyphicon-user"></span>Sign
+							up</a></li>
+					<li><a href="#"><span class="glyphicon glyphicon-log-in"></span>
+							Sign in</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!-- End Top Navbar -->
+	<!-- Start Project Logo -->
+	<div class="jumbotron bg-cover">
+		<div class="container text-center ">
+			<h1>Online Book Store</h1>
+			<p>Mission, Vission & Values</p>
+		</div>
+	</div>
+	<!-- End Project Logo -->
+	<!-- Start Project Body -->
+	<div class="container">
+		<p>
+			<button class="w3-button w3-block w3-red w3-left-align">LIST
+				OF BOOK</button>
+		</p>
+		<p></p>
+	</div>
+	<!-- List of Books -->
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-4">
+				<div class="panel panel-primary">
+					<div class="panel-heading">BLACK FRIDAY DEAL</div>
+					<div class="panel-body">
+						<img src="https://placehold.it/150x80?text=IMAGE"
+							class="img-responsive" style="width: 100%" alt="Image">
+					</div>
+					<div class="panel-footer">Buy 50 Books and get a gift card</div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="panel panel-danger">
+					<div class="panel-heading">BLACK FRIDAY DEAL</div>
+					<div class="panel-body">
+						<img src="https://placehold.it/150x80?text=IMAGE"
+							class="img-responsive" style="width: 100%" alt="Image">
+					</div>
+					<div class="panel-footer">Buy 50 Books and get a gift card</div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="panel panel-success">
+					<div class="panel-heading">BLACK FRIDAY DEAL</div>
+					<div class="panel-body">
+						<img src="https://placehold.it/150x80?text=IMAGE"
+							class="img-responsive" style="width: 100%" alt="Image">
+					</div>
+					<div class="panel-footer">Buy 50 Books and get a gift card</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<br>
+	<div class="container">
+		<p>
+			<button class="w3-button w3-block w3-red w3-left-align">LIST
+				OF BOOK</button>
+		</p>
+		<p></p>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-4">
+				<div class="panel panel-primary">
+					<div class="panel-heading">BLACK FRIDAY DEAL</div>
+					<div class="panel-body">
+						<img src="https://placehold.it/150x80?text=IMAGE"
+							class="img-responsive" style="width: 100%" alt="Image">
+					</div>
+					<div class="panel-footer">Buy 50 Books and get a gift card</div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="panel panel-primary">
+					<div class="panel-heading">BLACK FRIDAY DEAL</div>
+					<div class="panel-body">
+						<img src="https://placehold.it/150x80?text=IMAGE"
+							class="img-responsive" style="width: 100%" alt="Image">
+					</div>
+					<div class="panel-footer">Buy 50 Books and get a gift card</div>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="panel panel-primary">
+					<div class="panel-heading">BLACK FRIDAY DEAL</div>
+					<div class="panel-body">
+						<img src="https://placehold.it/150x80?text=IMAGE"
+							class="img-responsive" style="width: 100%" alt="Image">
+					</div>
+					<div class="panel-footer">Buy 50 Books and get a gift card</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Project Body -->
+	<br>
+	<br>
+	<footer class="container-fluid text-center">
+		<p>Online Store Copyright</p>
+		<form class="form-inline">
+			Get deals: <input type="email" class="form-control" size="50"
+				placeholder="Email Address">
+			<button type="button" class="btn btn-danger">Sign Up</button>
+		</form>
+	</footer>
+
+	<!-- BootStarp's Configuration -->
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<!-- JavaScript Configuration -->
+	<script type="text/javascript" th:src="@{/js/sidebar.js}"></script>
+</body>
+</html>
