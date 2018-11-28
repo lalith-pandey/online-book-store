@@ -1,9 +1,39 @@
 @charset "ISO-8859-1";
-
-.navbar {
-	margin-bottom: 50px;
-	border-radius: 0;
+/*Navbar Start*/
+body {
+  margin: 0;
+  font-family: pacifico, Helvetica, sans-serif;
 }
+
+.topnav {
+  overflow: hidden;
+  background-color: #000000;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: orange;
+  color: white;
+}
+
+.topnav a.active {
+	align-content:space-around;
+  background-color: #000000;
+  color: white;
+}
+
+.topnav-right {
+  float: right;
+}
+/*NavBar End*/
 
 /* Remove the jumbotron's default bottom margin */
 .jumbotron {
@@ -13,9 +43,8 @@
 /* Background image */
 .jumbotron {
   text-align: center;
-  /*padding-top: 10rem;*/
-  /*padding-bottom: 10rem;*/
-  text-shadow: 2px 2px #000;
+  text-shadow: 2px 2px #000000;
+  border-top: 1px solid orange;
 }
 
 .lead span {
@@ -24,49 +53,16 @@
 }
 
 .bg-cover {
-  /* background-image: url('/assets/logo_background.png'); */
+  /*background-image: url('../assets/logo_background.png');*/
+  background-color:black;
   background-size: cover;
-  color: #408080;
+  color: orange;
   background-position: center center;
   position: relative;
   z-index: -2;
 }
 
-.overlay {
-  background-color: #000;
-  opacity: 0.5;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  z-index: -1;
-}
-/*Add search box hight */
-input[type=text] {
-    width: 180px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 2px;
-    font-size: 16px;
-    background-color: white;
-    background-image: url('searchicon.png');
-    background-position: 10px 10px; 
-    background-repeat: no-repeat;
-    padding: 12px 12px 12px 40px;
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
-}
-
-input[type=text]:focus {
-    width: 50%;
-}
-
 /*Sidebar*/
-body {
-    font-family: "Lato", sans-serif;
-}
-
 .sidenav {
     height: 100%;
     width: 0;
@@ -74,7 +70,7 @@ body {
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #111;
+    background-color: orange;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
@@ -84,17 +80,13 @@ body {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
-    color: #818181;
+    color: white;
     display: block;
     transition: 0.3s;
 }
 
-.sidenav table tr td{
-	color : white;
-}
-
 .sidenav a:hover {
-    color: #f1f1f1;
+    color: black;
 }
 
 .sidenav .closebtn {
@@ -105,6 +97,34 @@ body {
     margin-left: 50px;
 }
 
+.topnav #navdesign{
+	cursor: pointer;
+	padding: 8px 8px 8px 32px;
+	font-size: 50px;
+	color:white;
+	/* margin-left: 50px; */
+}
+
+.topnav #navdesign:hover{
+	color:orange;
+	align:left;
+}
+.topnav #homeicon:hover{
+	color: orange;
+}
+
+.input-group .form-inline .input-group .form-control {
+    width: auto;
+    display: table-cell;
+    vertical-align: middle;
+}
+#menu-search {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 5px;
+}
+
+
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
@@ -113,4 +133,38 @@ body {
 footer {
 	background-color: #f2f2f2;
 	padding: 25px;
+}
+
+fieldset{
+	border:0px !important;
+    padding: 0.70em .625em .75em !important;
+}
+.vl1 {
+    border-left: 1px solid orange;
+    height: 65px;
+    position: absolute;
+    left: 70px;
+    margin-left: 0px;
+    top: 0;
+}
+.vl2 {
+    border-left: 1px solid orange;
+    height: 65px;
+    position: absolute;
+    left: 160px;
+    margin-left: 0px;
+    top: 0;
+}
+.vl3 {
+    border-left: 1px solid orange;
+    height: 65px;
+    position: absolute;
+    left: 840px;
+    margin-left: 0px;
+    top: 0;
+}
+
+.w3-red, .w3-hover-red:hover {
+    color: orange !important;
+    background-color: black !important;
 }

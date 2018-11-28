@@ -9,7 +9,9 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.online.project.model.Book;
 import com.online.project.model.Category;
+import com.online.project.repository.BookRepository;
 import com.online.project.repository.CategoryRepository;
 import com.online.project.services.CategoryService;
 
@@ -18,10 +20,12 @@ public class CategoryServiceImpl implements CategoryService {
 
 	@Autowired
 	private CategoryRepository categoryRepository;
+	@Autowired
+	private BookRepository bookRepository;
 
 	@Override
-	public Map<String, List<String>> getCategories() {
-		Map<String, List<String>> categoryMap = new HashMap<String, List<String>>();
+	public Map<String, List<Category>> getCategories() {
+		Map<String, List<Category>> categoryMap = new HashMap<String, List<Category>>();
 		List<Category> categoryList = (List<Category>) categoryRepository.findAll();
 
 		Map<Integer, String> catMap = new HashMap<Integer, String>();
@@ -32,7 +36,7 @@ public class CategoryServiceImpl implements CategoryService {
 		for (Entry<Integer, String> entry : catMap.entrySet()) {
 			List<Category> subCategoryList = getCategoryByParent(entry.getKey());
 			categoryMap.put(entry.getValue(),
-					subCategoryList.stream().map(n -> n.getName()).collect(Collectors.toList()));
+					subCategoryList.stream().map(n -> n).collect(Collectors.toList()));
 		}
 		return categoryMap;
 	}
@@ -40,6 +44,19 @@ public class CategoryServiceImpl implements CategoryService {
 	@Override
 	public List<Category> getCategoryByParent(Integer parent) {
 		return categoryRepository.findByParent(parent);
+	}
+
+	@Override
+	public List<Book> getBooksById(int parent) {
+		
+		return bookRepository.getBooksById(parent);
+	}
+	
+	@Override
+	public Map<Category, List<Book>> getAllBooksByCategory() {
+		Map<Category, List<Book>> getAllBooksByCategory = new HashMap<Category, List<Book>>();
+		
+		return getAllBooksByCategory;
 	}
 
 }

@@ -13,7 +13,9 @@ public class Category {
 	private Integer catId;
 	private String name;
 	private Integer parent;
-
+	/*@OneToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+	@JoinColumn(name = "cat_id")
+	private List<Book> books;*/
 	/*
 	 * private int id; private String category;
 	 */
